@@ -1,9 +1,20 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for(let i=0; i<array.length;i++){
+    const currentNum= array[i]
+    const complement=target-currentNum
+    for (let j=i+1; j< array.length; j++){
+      if(array[j]===complement){
+        return true
+      }
+    }
+  }
+  return false
 }
 
 /* 
   Write the Big O time complexity of your function here
+  This approach has a time complexity of 0(n^2) because it involves nested loops iterating through the array. The outer loop iterates n times, and for each iteration, the inner loop iterates up to n-1 times(excluding the current element). This results in a total of n*(n-1)=0(n^2)opeeations in the worst case
 */
 
 /* 
